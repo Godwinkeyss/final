@@ -1,0 +1,73 @@
+.pro-btn{
+    background: rgb(9, 9, 158);
+    border-radius: 5px;
+    color:white;
+    border: none;
+    padding: 10px 20px;
+}
+.edit{
+    background: rgb(61, 61, 222);
+    border-radius: 5px;
+    color:white;
+    border: none;
+    padding: 5px 20px;
+}
+.delete{
+    background: rgba(185, 36, 108, 0.769);
+    border-radius: 5px;
+    color:white;
+    border: none;
+    padding: 5px 20px;
+}
+.form-control{
+    /* border:1px solid gray !important; */
+    padding: 10px 20px;
+   
+}
+.form-select{
+    /* border:none !important; */
+    padding: 10px 20px;
+    
+}
+input[type= 'file']{
+    
+}
+.message{
+    border:1px solid gray;
+    margin-bottom: 10px;
+    padding: 10px ;
+    border-radius: 5px;
+}
+.message .name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.message .name p{
+    /* font-weight: bold; */
+    font-size: 14px;
+   opacity: .8;
+}
+.tracking{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.tracking p{
+    font-size: 14px;
+    font-weight: 500;
+    opacity: .7;
+}
+.date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.date a{
+    background: rgb(61, 61, 222);
+    border-radius: 5px;
+    color:white;
+    border: none;
+    padding: 5px 20px;
+}
