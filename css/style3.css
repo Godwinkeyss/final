@@ -1167,8 +1167,19 @@ justify-content: space-between;
 @media screen and (max-width:460px) {
     .big-product{
         flex-direction: column;
-       /* padding: unset; */
+       padding: unset;
+      padding-left: 5%;
+      padding-right: 5%;
        /* overflow: hidden; */
+    }
+    .product-left {
+        width: 100%;
+    }
+    .product-left img{
+        width: 100%  !important;
+    }
+    .product-right{
+        width: 100%;
     }
     .big-product:nth-child(2n+1){
         flex-direction: column;

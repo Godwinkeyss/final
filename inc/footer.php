@@ -24,11 +24,13 @@
             <div class="col-md-3">
                 <h1>FOLLOW US</h1>
                 <div class="icons">
+                    
+                    <a href="https://www.instagram.com/_slaybeast/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100083164305222"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.tiktok.com/@_slaybeast"><i class="fa-brands fa-tiktok"></i></a>
+                    <!-- <a href=""><i class="fa-brands fa-twitter"></i></a> -->
                     <i class="fa-brands fa-youtube"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-square-facebook"></i>
-                    <i class="fa-brands fa-tiktok"></i>
+                 
                 </div>
             </div>
         </div>

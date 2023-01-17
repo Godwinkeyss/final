@@ -561,7 +561,7 @@ function payWithPaystack(e) {
   e.preventDefault();
 
   let handler = PaystackPop.setup({
-    key: 'pk_test_13cef54d0c840d3e824435c212523939f5043462', // Replace with your public key
+    key: '', // Replace with your public key
     email: document.getElementById("email-address").value,
     amount: '<?php echo $amount;  ?>' * 100,
     ref: 'GP'+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
