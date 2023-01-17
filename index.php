@@ -146,7 +146,7 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
 
 <!-- featured section start -->
 <div class="section featured">
-    <h1 class="text-center my-5">FEAUTURED</h1>
+    <h1 class="text-center my-5">FEATURED</h1>
     <?php include('./server/get_main_products.php') ?>
   <?php  foreach($walls as $row):  ?>
     <div class="feature-wrapper container">
