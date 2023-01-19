@@ -1,20 +1,76 @@
-<?php  include('./inc/header.php');  
+<?php
+// session_start();
+include('./inc/header.php');  
+
+
+$cart = $_SESSION['cart'];
+
+// foreach($cart as $key => $value){
+//   echo $key ." : ". $value['product_quantity'];
+// }
+// print_r($cart);
+// exit;
 
 
 
+// if(isset($_SESSION['cart'])){
+//   function calculateTotalCart(){
+//     $total_price = 0;
+//     $total_quantity = 0;
+  
+//     foreach($_SESSION['cart'] as $key => $value){
+//      $product = $_SESSION['cart'][$key];
+//      $price = $product['product_price'];
+//      $quantity = $product['product_quantity'];
+  
+//      $total_price =$total_price +($price * $quantity);
+//      $total_quantity = $total_quantity + $quantity;
+//     }
+//     $_SESSION['total'] = $total_price;
+//     $_SESSION['quantity'] = $total_quantity;
+//   }
 
-
-                             
+//   CalculateTotalCart();
+// } 
+// if(isset($_POST['remove_product'])){
+  
+//       $product_id = $_POST['product_id'];
+//       unset($_SESSION['cart'][$product_id]);
+//       header('location: carts.php');
+    
+//       // calculate thee total
+//       calculateTotalCart();
+    
+// }
+// if(isset($_POST['edit_quantity'])){
+  
+//       // we getbid and quantity from the form
+//       $product_id = $_POST['product_id'];
+//       $product_quantity = $_POST['product_quantity'];
+    
+//       // get the product array from the session
+//       $product_array = $_SESSION['cart'][$product_id];
+    
+//       // update product quantity
+//       $product_array['product_quantity'] = $product_quantity;
+    
+//       // return array back to its place
+//       $_SESSION['cart'][$product_id] = $product_array;
+    
+//        // calculate thee total
+//        calculateTotalCart();
+// }  
+ 
 
 if(isset($_POST['add_to_cart'])){
 
     // if user has already added a product to cart
-    if(isset($_SESSION['cart'])){
+    if(isset($cart)){
   
-      $products_array_ids =array_column($_SESSION['cart'], "product_id"); //[2,3,4,10,15]
+      $products_array_ids =array_column($_SESSION['cart'],'product_id'); //[2,3,4,10,15]
        
       // if product has already been added to cart or not
-      if(!in_array($_POST['product_id'], $products_array_ids) ){
+      if(!in_array($_POST['product_id'],$products_array_ids) ){
         
             $product_id = $_POST['product_id'];
            
@@ -33,7 +89,7 @@ if(isset($_POST['add_to_cart'])){
   
         //product has already been added
       }else{
-      //  echo '<script>alert("Product was already added to the cart")</script>';
+       echo '<script>alert("Product was already added to the cart")</script>';
         $warning_message[] = 'Product was already added to the cart';
        //echo '<script>window.location="index.php"</script>';
       }
@@ -115,6 +171,8 @@ if(isset($_POST['add_to_cart'])){
   }
 
 
+
+
 ?>
 
 
@@ -128,14 +186,28 @@ if(isset($_POST['add_to_cart'])){
     <h1 class="my-5 py-5 text-center">Basket</h1>
     <div class="cart-wrapper container">
         <div class="cart-left">
-        <?php if(isset($_SESSION['cart'])) { ?>
-        <?php foreach(($_SESSION['cart']) as $key => $value):  ?>
+       <?php  if(isset($_SESSION['cart'])): ?>
+           
+          
+         
+        <?php 
+           $total = 0;
+        foreach($cart as $key => $value) {
+               
+               include('server/connection.php');
+                  $stmt =$pdo->prepare('SELECT * FROM products WHERE product_id=:product_id ');
+                  $stmt->bindValue(':product_id', $key);
+                  $stmt->execute();
+
+                  $row =$stmt->fetch(PDO::FETCH_ASSOC);
+                                          
+              ?>
             <div class="cart-left-container">
                     <div class="image-name">
-                        <img src="./images/<?php  echo $value['product_image1']; ?>" alt="">
+                        <img src="./images/<?php  echo $row['product_image1']; ?>" alt="">
                         <div class="price-name">
-                            <p><?php  echo $value['product_name']; ?></p>
-                            <p>£<?php  echo $value['product_price']; ?></p>
+                            <p><?php  echo $row['product_name']; ?></p>
+                            <p>£<?php  echo $row['price']; ?></p>
                             
                         </div>
                         
@@ -156,7 +228,7 @@ if(isset($_POST['add_to_cart'])){
                         <button>+</button> -->
                     </div>
                     <form action="carts.php"method="POST">
-                  <input type="hidden" name="product_id" value="<?php  echo $value['product_id']; ?>">
+                  <input type="hidden" name="product_id" value="<?php  echo $row['product_id']; ?>">
                     <div class="del">
                     <input type="submit"id="remove" name="remove_product"style="width:100%; background-color:white;border:none;"  class="remove-btn"  value=""/>
                     
@@ -166,11 +238,15 @@ if(isset($_POST['add_to_cart'])){
                     </div>
                     </form>
                     <div class="price">
-           <p>£<?php echo $value['product_quantity'] * $value['product_price']; ?></p>
+           <p>£<?php echo $value['product_quantity'] * $row['price']; ?></p>
            </div>
              </div>
-             <?php  endforeach; ?>
-       <?php  } ?>
+             <?php
+
+        }
+         ?>
+         <?php endif; ?>
+       
            
         </div>
 

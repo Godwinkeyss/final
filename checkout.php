@@ -267,18 +267,25 @@ foreach($code as  $row){
 <div class="checkout-right again">
         
     <?php if(isset($_SESSION['cart'])) { ?>
-        <?php foreach(($_SESSION['cart']) as $key => $value):  ?>
-             
+        <?php foreach(($_SESSION['cart']) as $key => $value){  
+            include('server/connection.php');
+                  $stmt =$pdo->prepare('SELECT * FROM products WHERE product_id=:product_id ');
+                  $stmt->bindValue(':product_id', $key);
+                  $stmt->execute();
+
+                  $row =$stmt->fetch(PDO::FETCH_ASSOC);
+                                          
+           ?>  
         <div class="checkout-img">
             <div class="img-check">
-                <img src="./images/<?php  echo $value['product_image1']; ?>" alt="" >
+                <img src="./images/<?php  echo $row['product_image1']; ?>" alt="" >
 
-                <p><?php  echo $value['product_name']; ?></p>
+                <p><?php  echo $row['product_name']; ?></p>
                 <div class="number"><?php  echo $value['product_quantity']; ?></div>
             </div>
-            <p>$<?php echo $value['product_quantity'] * $value['product_price']; ?></p>
+            <p>$<?php echo $value['product_quantity'] * $row['price']; ?></p>
         </div>
-        <?php  endforeach; ?>
+        <?php  } ?>
        <?php  } ?>
        
        
@@ -301,7 +308,9 @@ foreach($code as  $row){
         </div>
         <div class="right-sub-total">
             <span>Discount</span>
+            <?php if(isset($_SESSION['grand_total'])){  ?>
             <span class="span-2">-£<?= $_SESSION['grand_totals']  ?> </span >
+            <?php }else{echo ' <span class="span-2">-£ </span >';}  ?>
         </div>
         <div class="right-sub-total">
             <span>Shipping</span>
@@ -311,7 +320,14 @@ foreach($code as  $row){
         <div id="result"></div>
         <div class="right-check-total">
             <span class="span-3">Total</span>
+            <?php if(isset($_SESSION['grand_total'])){  ?>
             <span id="total" class="span-4">£<?= $_SESSION['grand_total']  ?>   </span>
+            <?php }else{
+                ?>
+            <span id="total" class="span-4">£<?= $_SESSION['total']  ?>   </span>
+
+                <?php
+            }  ?>
         </div>
     </div>
 </div>

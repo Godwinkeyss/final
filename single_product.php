@@ -74,7 +74,12 @@ if(isset($_GET['product_id'])){
                 echo "<p style='background-color:red; color:white;padding:5px 10px';>Out of stock</p>";
             }  ?>
             </form> 
+            
         </div>
+        <div class="wishlist float-end">
+        <a href="wishlist.php?product_id=<?php echo $_GET['product_id']  ?>"style='background-color:red; color:white;padding-top:2px;padding-bottom:25px'>Add to Wishlist</a>
+        </div>
+        
         <!-- acordion start-->
         <div class="accordion accordion-flush" id="accordionFlushExample ">
             <div class="accordion-item">
