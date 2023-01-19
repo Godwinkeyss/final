@@ -41,6 +41,9 @@
             </ul>
             <ul class="navbar-nav  mb-2 mb-lg-0">
             <li class="nav-item">
+                <a class="nav-link" href="show_wishlist.php"><i class="fa-regular fa-heart"style="font-size:20px"></i></a>
+                </li>
+            <li class="nav-item">
                 <a class="nav-link" href="account.php"><i class="fa-regular fa-user"style="font-size:20px"></i></a>
                 </li>
                 
