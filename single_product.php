@@ -76,8 +76,24 @@ if(isset($_GET['product_id'])){
             </form> 
             
         </div>
-        <div class="wishlist float-end">
-        <a href="wishlist.php?product_id=<?php echo $_GET['product_id']  ?>"style='background-color:red; color:white;padding-top:2px;padding-bottom:25px'>Add to Wishlist</a>
+        <div class="wishlists"  style="margin-bottom:50px;display:flex;align-items:center;justify-content:space-between">
+            <div class="color" style="display:flex;align-items:center;gap:10px">
+                <select name="" id="" >
+                    <option value="">Size</option>
+                    <option value="">XXL</option>
+                    <option value="">XL</option>
+                    <option value="">XM</option>
+                    <option value="">SM</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Color</option>
+                    <option value="">Red</option>
+                    <option value="">Green</option>
+                    <option value="">Pink</option>
+                    <option value="">Black</option>
+                </select>
+            </div>
+        <a href="wishlist.php?product_id=<?php echo $_GET['product_id']  ?>"style='background-color:red; color:white;padding:10px 14px;font-size:14px'>Add to Wishlist</a>
         </div>
         
         <!-- acordion start-->
