@@ -1,4 +1,5 @@
-<?php  include('./inc/header.php')  ?>
+
+<?php ob_start(); include('./inc/header.php')  ?>
 
 <?php
   
@@ -179,4 +180,4 @@ if(isset($_SESSION['logged_in'])){
 
 
 
-  <?php  include('./inc/footer.php')  ?>
+  <?php ob_end_flush(); include('./inc/footer.php')  ?>

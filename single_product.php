@@ -54,7 +54,7 @@ if(isset($_GET['product_id'])){
         </div>
         <div class="single-quant mb-5">
             <div class="quant">
-            <form action="addToCart.php" method="POST">
+            <form action="carts.php" method="POST">
 
                     <input type="hidden" name="product_id" value="<?php echo $product['product_id'];?>">
                     <input type="hidden" name="product_image1" value="<?php echo $product['product_image1'];?>">

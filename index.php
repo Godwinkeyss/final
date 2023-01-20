@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
 ?>
    <!-- navbar end -->
    <!-- video start -->
-<section class="video">
+<section class="video my-5 py-5" style="margin-top:400px">
 
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">

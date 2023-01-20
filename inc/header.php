@@ -1,8 +1,4 @@
-<?php session_start();
-    
-//  $_SESSION['cart'] = 22;
-
-?>
+<?php session_start();  ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +14,7 @@
 </head>
 <body>
    <!-- navbar start -->
-<nav class="navbar navbar-expand-lg bg-light fixed-top">
+<!-- <nav class="navbar navbar-expand-lg bg-light fixed-top shadow">
         <div class="container">
             <a class="navbar-brand fs-1 logo" href="index.php">SLAYBEAST</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,26 +23,27 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link active g" aria-current="page" href="index.php">HOME</a>
+                <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link g" href="products.php">PRODUCTS</a>
+                <a class="nav-link" href="products.php">PRODUCTS</a>
                 </li>
-                
                 <li class="nav-item">
-                <a class="nav-link g" href="contact.php">CONTACT</a>
+                <a class="nav-link" href="#">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">CONTACT</a>
                 </li>
             
             
             </ul>
             <ul class="navbar-nav  mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="show_wishlist.php"><i class="fa-regular fa-heart"style="font-size:20px"></i></a>
+                <a class="nav-link" href="account.php">ACCOUNT</a>
                 </li>
-            <li class="nav-item">
-                <a class="nav-link" href="account.php"><i class="fa-regular fa-user"style="font-size:20px"></i></a>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
                 </li>
-                
                 <li class="nav-item">
                 <a class="nav-link" href="carts.php">
                             <i class="fa-solid fa-bag-shopping cart "style="font-size:20px">
@@ -56,9 +53,7 @@
                                 
                             <?php } ?>
                             </i>
-                            <!-- echo '<prev>';
-                             print_r( $_SESSION['cart']);
-                             echo '</prev>'; -->
+                          
                         </a>
             
                 
@@ -66,5 +61,52 @@
             </ul>
             </div>
         </div>
-</nav>
+</nav> -->
+<header class="headers">
+        <nav class="navs">
+            <div class="left">
+                <div class="bug">
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                </div>
+                <h1><a href="index.php"> SLAYBEAST</a> </h1>
+           </div>
+            <div class="center">
+                <ul>
+                    <li><a href="index.php">HOME</a></li>
+                    <li><a href="products.php">PRODUCTS</a></li>
+                    <!-- <li><a href="">ABOUT</a></li> -->
+                    <li><a href="contact.php">CONTACT</a></li>
+                    <li class="reg regs"><a href="account.php">REGISTER</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li class="reg"><a href="account.php"><i class="fa-regular fa-user bag"></i></a></li>
+                    <li><a href="show_wishlist.php"><i class="fa-regular fa-heart bag"></i></a></li>
+                    <li><a href="carts.php"><i class="fa-solid fa-bag-shopping cart">
+                    <?php if(isset($_SESSION['cart'])) { ?>
+                                <span class="cart-quantity"style="background:red;color:white;border-radius:50%;padding:3px 6px;font-size:12px;position:absolute;top:28px"><?php echo count($_SESSION['cart']);  ?></span>
+
+                                
+                            <?php } ?>
+                    </i></a></li>
+                </ul>
+            </div>
+         </nav>
+    </header>
+
+
+
+    <script>
+        let center = document.querySelector('.center')
+let bug = document.querySelector('.bug')
+
+bug.addEventListener('click',()=>{
+    bug.classList.toggle('active');
+    center.classList.toggle('active');
+})
+
+    </script>
 <!-- navbar end -->

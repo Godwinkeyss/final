@@ -126,8 +126,8 @@ if(isset($_POST['search'])){
                              
                             
             </div>
-            
-        <nav aria-label="Page navigation example" style="text-align:center;">
+            <div class="pagi" style="position:relative">
+        <navs aria-label="Page navigation example" style="text-align:center;">
             <ul class="pagination mt-5">
 
                 <li class="page-item <?php if($page_no<=1){echo 'disabled';} ?>">
@@ -136,7 +136,7 @@ if(isset($_POST['search'])){
 
                 </li>
                 <li class="page-item"><a href="?page_no=1" class="page-link">1</a></li>
-                <li class="page-item"><a href="?page_no=2" class="page-link">2</a></li>
+                <!-- <li class="page-item"><a href="?page_no=2" class="page-link">2</a></li> -->
 
                 <?php if($page_no >=3){ ?>
                 <li class="page-item"><a href="#" class="page-link">...</a></li>
@@ -150,8 +150,8 @@ if(isset($_POST['search'])){
 
                 </li>
             </ul>
-        </nav>
-
+        </navs>
+        </div>
     </div>
 </section>
 

@@ -1,4 +1,8 @@
-<?php  include('./inc/header.php');  
+<?php 
+// session_start();
+ob_start();
+include('./inc/header.php');  
+
 
 
 include('./server/connection.php');
@@ -58,7 +62,7 @@ $_SESSION['message'] = "Please login to add item to wishlist ";
                              
 
 
-
+   ob_end_flush();
 ?>
 
 
