@@ -1,4 +1,6 @@
-<?php  include('./inc/header.php');  
+<?php  
+ob_start();
+include('./inc/header.php');  
 
 
 include('./server/connection.php');
@@ -23,7 +25,7 @@ include('./server/connection.php');
 
 <section class="wish">
    
-<h1 class="my-5 py-5 text-center mt-5">My Wishlist</h1>
+<h1 class="my-5 py-5 text-center ">My Wishlist</h1>
 <div class="mess"style="align-items:center;display:flex; justify-content:center">
 <?php if(isset($_SESSION['message'])) { ?>
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -36,7 +38,7 @@ include('./server/connection.php');
         <h5>Love It? Add To My Wishlist</h5>
         <p>My Wishlist allows you to keep track of all of your favorites and shopping activity whether you're on your computer, phone, or tablet. You won't have to waste time searching all over again for that item you loved on your phone the other day - it's all here in one place!</p>
 
-        <a href=''>Continue shopping</a>
+        <a href='index.php'>Continue shopping</a>
      </div>
 
     <div class="wishlist_container container">
@@ -100,6 +102,6 @@ include('./server/connection.php');
 
 
 
-<?php  include('./inc/footer.php')  ?>
+<?php ob_end_flush(); include('./inc/footer.php')  ?>
 
 

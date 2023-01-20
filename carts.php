@@ -1,4 +1,5 @@
-<?php  include('./inc/header.php');  
+<?php 
+ include('./inc/header.php');  
 
 
 
@@ -124,7 +125,7 @@ if(isset($_POST['add_to_cart'])){
 
 
 
-<section class="cart">
+<section class="cart carte">
     <h1 class="my-5 py-5 text-center">Basket</h1>
     <div class="cart-wrapper container">
         <div class="cart-left">

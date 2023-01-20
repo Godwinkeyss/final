@@ -45,7 +45,7 @@ if(isset($_GET['reference']) && isset($_GET['order_id'])){
             // go to user account
             header('location: ../account.php?payment_message=paid successfully, thanks for shopping with us');
 }else{
-    header('location: ../home.php');
+    header('location: ../index.php');
     exit;
 }
 

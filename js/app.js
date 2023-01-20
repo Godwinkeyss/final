@@ -57,3 +57,12 @@
     // }
  
     // }
+
+    let center = document.querySelector('.center')
+let bug = document.querySelector('.bug')
+console.log(bug);
+
+bug.addEventListener('click',()=>{
+    bug.classList.toggle('active');
+    center.classList.toggle('active');
+})

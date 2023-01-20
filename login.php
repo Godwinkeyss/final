@@ -1,7 +1,7 @@
 
 
 <?php
-
+ob_start();
 include('inc/header.php');
 include('./config/dbcon.php');
 ?>
@@ -38,6 +38,7 @@ if(isset($_POST['login_btn'])){
          $_SESSION['message'] = ' logged in successfully';
   
          header("Location:index.php?login_success=logged in successfully");
+         
          
        }else{
         $_SESSION['message'] = 'could not verify your account';
@@ -89,4 +90,4 @@ if(isset($_POST['login_btn'])){
 </div>
 
     <!-- footer -->
-    <?php  include('inc/footer.php') ?>
+    <?php ob_end_flush();  include('inc/footer.php') ?>
