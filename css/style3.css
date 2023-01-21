@@ -258,7 +258,7 @@ body{
     display: flex;
     /* align-items: center; */
     flex-direction: column;
-    padding: 100px  50px;
+    padding: 10px  50px;
 }
 .feature-right h1{
     font-family: 'Yellowtail', cursive;
@@ -270,7 +270,7 @@ body{
 }
 .feature-left img{
     width: 100%;
-    height: 500px;
+    /* height: 500px; */
     object-fit: cover;
 }
 .feature-right button{
@@ -1442,7 +1442,9 @@ justify-content: space-between;
      
     }
     .feature-right{
-        padding: unset;
+        padding: unset !important;
+        
+        
     }
     .feature-left img{
        height: 100%;

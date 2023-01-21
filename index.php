@@ -48,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active c-item" data-bs-interval="10000">
-      <img src="./images/DURAG.jpg" class="d-block w-100 c-img" alt="...">
+      <img src="./images/imgonline-com-ua-CompressToSize-uiBrvoJcdtZNbYM.jpg" class="d-block w-100 c-img" alt="...">
       <div class="carousel-caption caption d-md-block top-0 mt-5 pt-5">
       <p class="fs-3 mt-5 pt-5">Best Services For You</p>
         <h3 class="display-3 fw-bold text-capitalize mt-3">Slay Beast</h3>
@@ -60,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
       </div>
     </div>
     <div class="carousel-item c-item" data-bs-interval="2000">
-      <img src="./images/WALLPAPER.jpg" class="d-block w-100 c-img" alt="...">
+      <img src="./images/imgonline-com-ua-CompressToSize-XkynfJ4h4R0f.jpg" class="d-block w-100 c-img" alt="...">
       <div class="carousel-caption caption d-md-block  top-0 mt-5 pt-5">
       <p class="fs-3 mt-5 pt-5">Serving You Better.</p>
         <h3 class="display-3 fw-bold text-capitalize mt-3">Slay Beast</h3>
@@ -72,7 +72,7 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
       </div>
     </div>
     <div class="carousel-item c-item">
-      <img src="./images/WALLPAPER2.jpg" class="d-block w-100 c-img" alt="...">
+      <img src="./images/imgonline-com-ua-CompressToSize-7GXAZZIjSojSacVn.jpg" class="d-block w-100 c-img" alt="...">
       <div class="carousel-caption caption d-md-block  top-0 mt-5 pt-5">
       <p class="fs-3 mt-5 pt-5">We Are The Best.</p>
         <h3 class="display-3 fw-bold text-capitalize mt-3">Slay Beast</h3>
@@ -167,7 +167,7 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
 <!-- featured section end -->
 <!-- big banner start -->
 <section class="big-banner">
-    <img src="./images/WALLPAPER.jpg" alt="">
+    <img src="./images/imgonline-com-ua-CompressToSize-zzeysAIASJvMdQ.jpg" alt="">
 </section>
 <!-- big banner end -->
 
