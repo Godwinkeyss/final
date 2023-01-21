@@ -99,7 +99,7 @@ if(isset($_POST['search'])){
 
 <section class="products">
 <div class="product-banner">
-            <img src="./images/WALLPAPER.jpg" alt="">
+            <img src="./images/imgonline-com-ua-CompressToSize-uiBrvoJcdtZNbYM.jpg" alt="">
         </div>
     <div class="product-banner container">
        
